@@ -13,6 +13,164 @@ Download the files required to begin working through the tutorial from [here](ht
 
 You should use **lesson2.html** and **script.js** to write the exercises in for the first part of the tutorial, and **london.html** and **london-script.js** for doing the DOM exercises.
 
+## Values
+
+In the first tutorial, we talked about **values**. The types of values
+that we met before were **strings**:
+
+```js
+var name = "codebar";
+
+console.log(name + " is amazing!"); // this is an expression
+```
+
+**numbers**:
+
+```js
+var pi = 3.14;
+
+console.log("The value of pi: " + pi);
+```
+
+and **objects**:
+
+```js
+var person = {first_name: "Archibald"};
+
+console.log("Hello " + person.first_name + "!");
+```
+
+We're going to introduce one more important type: **booleans**. A
+boolean is either `true` or `false`: it has to be one of those two
+values.
+
+```js
+var codebarIsAwesome = true;
+var weatherIsAmazing = false;
+
+console.log("Is codebar AWESOME? " + codebarIsAwesome);
+console.log("Is the weather in London amazing? " + weatherIsAmazing);
+```
+
+## Expressions
+
+In the first tutorial, we saw expressions using the `+` operator. The
+other basic math operators are `-`, `*`, and `/`:
+
+```js
+var x = 6;
+var y = 3;
+var addition = x + y;
+
+console.log("Addition: x + y = " + addition);
+
+var subtraction = x - y;
+
+console.log("Subtraction: x - y = " + subtraction);
+
+var multiplication = x * y;
+
+console.log("Multiplication: x * y = " + multiplication);
+
+var division = x / y;
+
+console.log("Division: x / y = " + division);
+```
+
+Another really important kind of operator are the comparisons. The
+`===` operator has a **boolean** value: it is `true` if the two things
+are exactly the same, and `false` if they are not.
+
+```js
+var apples = "apples";
+var oranges = "oranges";
+
+var equal = apples === oranges;
+console.log("Apples and oranges are the exactly same: " + equal);
+```
+
+The opposite of `===` is `!==`: it is `false` if the two things are
+exactly the same, and `true` if they are different.
+
+```js
+var apples = "apples";
+var oranges = "oranges";
+
+var notEqual = apples !== oranges;
+console.log("Apples and oranges are different: " + notEqual);
+```
+
+> There is another pair of operators called `==` and `!=` which we
+> aren't going to look at in this tutorial. These do something
+> similar, but are a bit more complicated and tend to be surprising
+> instead of useful. You can just use `===` and `!==` and they will
+> always do what you expect.
+
+The `>` and `<` operators are "greater than" and "less than". You can
+use them to tell which of two numbers is bigger. Similarly, `>=` and
+`<=` are "greater than or equal" and "less than or equal".
+
+```js
+var coaches = 20;
+var students = 24;
+var pizzas = 25;
+
+var greater = students > coaches;
+console.log("More students than coaches: " + greater);
+
+var less = students < pizzas;
+console.log("Fewer students than pizzas:" + less);
+```
+
+You can also use several operators together:
+
+```js
+var enoughPizzas = coaches + students < pizzas;
+console.log("We have enough pizzas for everybody: " + enoughPizzas);
+```
+
+## if statements
+
+When you have a boolean, you can use it to decide whether a block of
+statements should be executed.
+
+```js
+var codebarIsAwesome = true;
+
+if (codebarIsAwesome) {
+  console.log("codebar is AWESOME!");
+}
+```
+
+This is more interesting when you use the comparison operators:
+
+```js
+var coaches = 20;
+var students = 24;
+var pizzas = 25;
+
+var people = coaches + students;
+
+if (people > pizzas) {
+  console.log("We have more people than pizzas!");
+}
+
+if (students > pizzas) {
+  console.log("But we have more students than pizzas! Let's not give the coaches any food.");
+}
+```
+
+You can also have a block of statements that happen when the condition
+is false, using an `else`:
+
+```js
+if (people > pizzas) {
+  console.log("We have more people than pizzas. That's not very good :/");
+} else {
+  console.log("We have waaay too much pizza. That can never be bad! :)");
+}
+```
+
 ## Loops
 
 A loop is used to execute a set of statements repeatedly until a condition is met.
@@ -31,6 +189,8 @@ When the while loop starts, the test is checked. If it is false, then the while 
 
 The difference is in what happens after the statements in the block. With an `if`, everything is finished and the statements below the if block are executed. With a `while`, we go back up to the test. If the test is still true, the statements in the block are executed again, and so on until the test is false. This is why we call it a loop.
 
+For example, if we wanted to set a timer on an online ticket outlet, we could count the timer down and while it hasn't reached zero, the option to buy the ticket could still be available.
+
 We can use this to sum all numbers from 1 to 10:
 
 ```js
@@ -45,7 +205,7 @@ while (i <= 10) {
 console.log("Total: " + total);
 ```
 
-> `<=` stands for **smaller or equal**. We can also express `<=10` using `< 11`
+> We can also express `<= 10` using `< 11`
 
 You can read this as:
 
@@ -73,6 +233,8 @@ The second part is a test, and just like in the `while` loop it is checked befor
 
 The third part is executed after each loop iteration. It's useful for incrementing the loop counter.
 
+For example, if we had an online shopping basket, we could loop over the items in the basket and add up the cost to a total using a `for` loop. The initial value can be zero, the second part can test that there are still items left to be added up and the third part can increment to the next item. The code that is run on each iteration can add the cost to a shopping basket total.
+
 The `while` loop above can be rewritten as a `for` loop:
 
 ```js
@@ -85,6 +247,7 @@ for (i = 1; i <= 10; i = i + 1) {
 
 console.log("Total: " + total);
 ```
+> Another way to write the for loop is `for (var i = 1; i <= 10; i++)`. The `i++` is a short way of writing "increase i by one".
 
 Even though `while` loops are more simple than `for` loops, it is more common to see `for` loops. This is because loops are often used to do something with arrays, which are introduced in the next section.
 
@@ -184,7 +347,7 @@ nums.sort(sortNumbersAscending);
 console.log(nums);
 ```
 
-Sort passes pairs of entries from the array to `sortNumbersAscending`. If `sortNumberAscending` returns a number less than zero, then sort knows that `a` should come before `b`. If the number is greater than zero, then `b` should come before `a`.
+Sort passes pairs of entries from the array to `sortNumbersAscending`. If `sortNumbersAscending` returns a number less than zero, then sort knows that `a` should come before `b`. If the number is greater than zero, then `b` should come before `a`.
 
 Another cool operation you can apply is `reverse()`.
 
@@ -194,10 +357,10 @@ animals.sort().reverse();
 
 ```js
 // Sort numbers descending.
-nums.sort(ascending).reverse();
+nums.sort(sortNumbersAscending).reverse();
 ```
 
-> Can you write a function called `sortNumbersDescending` that can be used in place of `.sort(ascending).reverse()`?
+> Can you write a function called `sortNumbersDescending` that can be used in place of `.sort(sortNumbersAscending).reverse()`?
 
 ### Loops again!
 
@@ -233,92 +396,9 @@ for (var i = 0; i < fruitAndVeg.length; i = i + 1) {
 }
 ```
 
-
-
-## Objects
-
-### So what are objects?
-Objects are very important in JavaScript. In fact, you've already used a special kind of object (arrays). Objects are containers for anything you like, including objects and functions. JavaScript makes creating objects very easy.
-
-They are special kinds of data, with **properties** and **methods**
-
-```js
-var message = "It's cold today";
-console.log(message.length);  // using length property
-console.log(message.toUpperCase());  // using toUpperCase() method
-```
-
-### Creating our own objects
-
-Here is the basic template for creating an object with some properties
-
-```js
-var object = {
-  propertyName: propertyValue,
-  propertyName: propertyValue,
-  methodName: function(){
-    //method definition
-  },
-  ...
-};
-```
-
-Let's apply that to store some information about London.
-
-```js
-var london = {
-  name: "London",
-  population: 8308369,
-  tallestBuilding: {
-     name:  "Shard",
-     height: "310m"
-  },
-  numberOfUniversities: 43,
-  averageRent: 1106,
-  dailyTubePassengerJourney: 3500000,
-  olympics: [ 1908, 1948, 2012],
-  updatePopulation: function(newPopulation) {
-    this.population = newPopulation;
-  }
-};
-```
-
-To access the properties, we can either use the **bracket notation** like in Arrays, or the **dot notation**
-
-```js
-console.log("Population of London: " + london.population);
-```
-
-As you can see, we can also define **nested objects**, like _tallestBuilding_. We can access their properties in a similar way.
-
-```js
-console.log("The tallest building in London is the " + london.tallestBuilding.name + " with a height of " + london.tallestBuilding.height);
-```
-
-And we can also use arrays within them!
-
-```js
-var i;
-
-console.log("The olympics took place in London in:\n");
-
-for (i = 0; i < london.olympics.length; i = i + 1) {
-  console.log(london.olympics[i]);
-}
-```
-Also you can see that we can have methods in them. We have a method `updatePopulation` using which you can update the `population` property of `london`.
-
-```js
-console.log("Population before update: " + london.population);
-london.updatePopulation(8400000);
-console.log("Population after update: " + london.population);
-```
-We have used the keyword `this` inside the `updatePopulation` method. It is used to access the properties and methods of objects from inside the object itself.
-
-
 ## The DOM
 
-###What is the DOM?
+### What is the DOM?
 **DOM** stands for **D**ocument **O**bject **M**odel.
 
 When the HTML is loaded on our page, the browser generates its DOM. This enables us to access and interact with HTML elements using JavaScript.

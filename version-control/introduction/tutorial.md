@@ -48,7 +48,7 @@ There are a number of different version control systems. The most popular ones a
 We will be using **git**.
 
 ### Why Git?
-There are a number of reasons we chose git. To name some  
+There are a number of reasons we chose git. To name some
 
 - A lot of learning resources
 
@@ -87,7 +87,7 @@ When using version control, you should commit every time you do a small piece of
 
 For example, if you want to change the position of an element, the color of all the links on your page and the font size dimensions of all paragraphs, you should do three commits, using messages that describe what you are doing each time.
 
-###Bad commit messages
+### Bad commit messages
 
 Every time you commit a change use a message that describes your change clearly. In a few months time you will have difficulty remembering why you applied a change if your messages say _changing some CSS_, _another commit_, or _more changes_
 

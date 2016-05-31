@@ -6,21 +6,23 @@ footer: true
 
 ##  HTML AND CSS - Diving into HTML5 and CSS3
 
+### Objective
+
+Today we will be building a website and will focus more on HTML5 and CSS3 specific elements.
+
+### Goal
+
+The page we will build will look similar to this [example page](http://codebar.github.io/tutorials/html/lesson5/example.html "Anita Borg")
+
+### Required files
+
+Download the files required to begin working through the tutorial from [here](https://gist.github.com/despo/7565600/download)
+
 ### Recap
 
 In the previous lessons, we spoke about **H**yper **T**ext **M**arkup **L**anguage and **C**ascading **S**tyle **S**heets.
 **HTML** defines the _structure_ of a website and **CSS** the _presentation_. We also discussed the box model, inline and block elements, pseudo clases and went into more details about CSS Layouts and formatting.
 
-### Today we will be building a website and will focus more on HTML5 and CSS3 specific elements
-
-The page we will build will look similar to this [example page](http://codebar.github.io/tutorials/html/lesson5/example.html "Anita Borg")
-
-## But before we start...
-
-### Required files
-
-
-Download the files required to begin working through the tutorial from [here](https://drive.google.com/file/d/0Bws_MKyXHfv9VUYxazUzOE9Rc2M/view?usp=sharing)
 
 ## Getting started
 
@@ -112,8 +114,8 @@ Add this right after the beginning of the element with the id `wrapper`
 
 ```html
 <div>
-  <img src="anita-top.jpg" alt="Anita Borg image 1"/>
-  <img src="anita-bottom.jpg" alt="Anita Borg image 2"/>
+  <img src="anita-top.jpg" alt="Anita Borg image 1">
+  <img src="anita-bottom.jpg" alt="Anita Borg image 2">
   <div>
     <a href="http://gos.sbc.edu/b/borg.html">reference</a>
     <a href="http://en.wikipedia.org/wiki/Anita_Borg">wikipedia</a>
@@ -156,7 +158,9 @@ Great! Now our images and links are on the left, and the main content on the rig
 
 [Border radius](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) enables us to create rounded corners for our elements. In the past, multiple divs and the use of images was required to achieve that effect.
 
-`border-radius: arc`
+Border radius can be defined in many different units - the higher the number, the bigger the curve. An example of border-radius in your code would be:
+
+`border-radius: 10px;`
 
 Now that we know what border radius is, let's use it to add a nice frame to the first image.
 
@@ -326,7 +330,7 @@ p.about {
 
 ### What is an em
 
-The name of an `em` doesn't really stand for anything. It was originally used to describe that it was equal to the **M** character as it was commonly casted as the full-width of the square "block which are used in printing presses.
+The name of an `em` stands for an ephemeral unit. It was originally used to describe that it was equal to the **M** character as it was commonly casted as the full-width of the square "block which are used in printing presses.
 
 By using `em` instead of `px` to set the font-size, we are keeping it relative to the default font size. So 0.9em is 0.9 times the size that would have otherwise applied to that container.
 
@@ -435,4 +439,4 @@ You can find both the rgb and hex values of a color through [http://0to255.com](
 
 
 -----
-This ends our fifth lesson. How did you find the introduction to CSS3? Is there something you don't understand? Try and go through the provided resources with your coach. If you have any feedback, or can think of ways to improve this tutorial [send us an email](mailto:feedback@codebar.io) and let us know.
+This ends our fifth lesson, we hope you enjoyed it and learnt something. If you have some spare time how about going back through this tutorial and, by yourself, make some amendments. If there is something you did not understand or want to give us some feedback please [send us an email.](mailto:feedback@codebar.io)
